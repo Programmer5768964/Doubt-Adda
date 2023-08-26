@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Components/Home/Home";
 import KnowUs from "./Components/KnowUs/KnowUs";
+import "./Components/KnowUs/KnowUs.css";
 import AskDoubt from "./Components/AskDoubt/AskDoubt";
 import Build from "./Components/BuildWebsite/BuildWebsite";
 
