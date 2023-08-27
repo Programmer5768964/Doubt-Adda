@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 .yellow-bg {
-  background-color: yellow;
+  background-color: rgb(255, 246, 125);
   height: 200px;
   width: 101.1%;
   margin-top: -10px;
@@ -92,7 +92,7 @@
 .introduction {
   display: flex;
   flex-direction: column;
-
+  
   margin-left: 17%;
   width: 70%;
 }
@@ -108,7 +108,7 @@
 }
 
 .auto-input {
-  color: yellow;
+  color:rgb(255, 246, 125);
 }
 .footer {
   display: flex;
