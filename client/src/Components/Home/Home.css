@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&family=Quicksand&family=Sacramento&display=swap');
 
-body {
-    
-    margin: 0px;
-    padding: 0px;
+*{
+    margin:0px;
+    padding:0px;
 }
 
 .section-1 {
-    background-color: #efefef;
-    background:url("./section1-bg.png");
+    transition-duration: 0.5s;
+    background-color: transparent;
+    
     height: fit-content;
-    padding: 10px;
+    padding:1px;
+    z-index:2;
 }
 
 
@@ -18,12 +19,17 @@ body {
     font-size: 30px;
     margin:10px;
     margin-inline-start: 10px;
+    margin-left:20px;
     display: inline-block;
 }
+.section-1 nav{
+    position:fixed;
+    display:inline-block;
+    width:100%;
+}
 .section-1 nav a {
-    margin-top:auto;
     margin:5px;
-    margin-bottom: 5px;
+    margin-right:20px;
     float:right;
     align-content: center;
     display: inline-block;
@@ -39,9 +45,19 @@ body {
     transition-duration: 0.5s;
     background-color:rgb(89, 31, 137);
 }
+.section-1 nav button{
+    float:right;
+    width:80px; 
+    transition-duration: 0.3s;
+    height:50px;
+    border:0px;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:80px 50px;
+}
 
 .header-container {
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .header-theme-name {
@@ -103,12 +119,15 @@ body {
     margin:auto;
     margin-top:20px;
     text-align: center;
+    color:#8338ec;
     
 }
+
 .section-2{
     font-size:22px;
     background-color:#8338ec;
     color:white;
+    z-index:2;
 }
 .key-features{
     margin-inline: 40px;
@@ -134,9 +153,9 @@ body {
 }
 
 .header-container-btn button {
-    margin-inline: 5px;
+    margin-inline: 10px;
     font-size: large;
-    padding: 4px;
+    padding: 10px;
     border-radius: 10px;
     border-width: 0px;
     background-color: #ffff67;
