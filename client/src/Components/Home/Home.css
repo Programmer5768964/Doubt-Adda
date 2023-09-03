@@ -45,15 +45,17 @@
     transition-duration: 0.5s;
     background-color:rgb(89, 31, 137);
 }
-.section-1 nav button{
+.section-1 nav div{
     float:right;
-    width:80px; 
+    width:100px; 
     transition-duration: 0.3s;
-    height:50px;
+    height:45px;
+    margin-top:5px;
     border:0px;
+    border-radius:20px;
     background-repeat: no-repeat;
     background-position:center;
-    background-size:80px 50px;
+    background-size:90px;
 }
 
 .header-container {
