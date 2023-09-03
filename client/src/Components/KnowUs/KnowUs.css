@@ -92,7 +92,7 @@
 .introduction {
   display: flex;
   flex-direction: column;
-  
+
   margin-left: 17%;
   width: 70%;
 }
@@ -108,7 +108,7 @@
 }
 
 .auto-input {
-  color:rgb(255, 246, 125);
+  color: rgb(255, 246, 125);
 }
 .footer {
   display: flex;

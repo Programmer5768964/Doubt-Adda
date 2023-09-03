@@ -7,6 +7,7 @@ import HomePage from "./Components/Home/Home";
 import KnowUs from "./Components/KnowUs/KnowUs";
 import "./Components/KnowUs/KnowUs.css";
 import AskDoubt from "./Components/AskDoubt/AskDoubt";
+import "./Components/AskDoubt/AskDoubt.css";
 import Build from "./Components/BuildWebsite/BuildWebsite";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
