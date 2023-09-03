@@ -18,7 +18,7 @@ root.render(
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<KnowUs />} />
         <Route path="/askyourdoubt" element={<AskDoubt />} />
-        <Route path="/buildyourwebsite" element={<Build />} />
+        <Route path="/buildsite" element={<Build/>} />
       </Routes>
     </Router>
   </React.StrictMode>
