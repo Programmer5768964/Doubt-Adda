@@ -2,32 +2,35 @@ body {
   background-color: rgb(40 40 41 / 10%);
 }
 .askdoubt-section {
-  /* border: 4px solid purple; */
-  /* border-radius: 25px; */
+  box-sizing: border-box;
 }
 #bg-color {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
   background-color: transparent;
   /* background-color: purple; */
   /* border-radius: 25px; */
-  margin: -9px;
+
   height: 500px;
-  z-index: -1;
+  padding: 20px;
 }
+
 .qna {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 200px;
+  width: 50%;
 
   /* color: rgb(255, 246, 125); */
   /* font-size: 90px; */
   /* -webkit-text-stroke: 2px #8338ec; */
 
   /* color: #c19bf5; */
+}
+.left-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  width: 100%;
 }
 
 .qna h1 {
@@ -86,7 +89,7 @@ body {
   height: 100px;
   border: 2px solid #8338ec;
   background-color: #c19bf5;
-  width: 47%;
+  width: 48%;
   padding: 20px;
   border-radius: 5px;
 }
@@ -155,14 +158,14 @@ body {
   justify-content: space-between;
   height: 47px;
 }
-.btn1 {
+.askdoubt-btn1 {
   height: 36px;
   width: 100px;
   border: 0;
   font-size: 20px;
   cursor: pointer;
 }
-.btn2 {
+.askdoubt-btn2 {
   height: 36px;
   width: 150px;
   /* border: 0; */
@@ -171,7 +174,7 @@ body {
   cursor: pointer;
   color: purple;
 }
-.btn2:hover {
+.askdoubt-btn2:hover {
   background-color: purple;
   color: rgb(255, 246, 125);
 }
@@ -199,8 +202,10 @@ body {
   background: rgb(255, 246, 125);
   font-size: 20px;
   color: purple;
-  border-radius: 9px;
+  border-radius: 6px;
   box-shadow: 0px 0px 4px;
+  height: 28px;
+  width: 76px;
 }
 .ask-answer-events .btn4 {
   border: 0;
@@ -208,8 +213,10 @@ body {
   font-size: 20px;
   cursor: pointer;
   color: purple;
-  border-radius: 9px;
+  border-radius: 6px;
   box-shadow: 0px 0px 4px;
+  height: 28px;
+  width: 76px;
 }
 .btn3:hover {
   color: rgb(255, 246, 125);
@@ -228,13 +235,14 @@ body {
   /* border: 2px solid red; */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+
   align-items: center;
   background-color: transparent;
   height: 100%;
   margin-top: 10px;
-  margin-left: -8px;
-  width: 101%;
+
+  width: 100%;
+  padding: 20px;
 }
 .doubts-list {
   /* border: 2px solid red; */
@@ -274,6 +282,11 @@ body {
 }
 .count {
   color: red;
+}
+
+.left-qna-container {
+  display: flex;
+  flex-direction: column;
 }
 
 /* .doubts-list::before {

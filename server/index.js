@@ -47,13 +47,27 @@ app.post("/postquestion", async (req, resp) => {
   resp.send(result);
 });
 
+app.post("/postanswer/:id", async (req, resp) => {
+  let result = DoubtModel.insert();
+});
+
 app.put("/postanswer/:id", async (req, resp) => {
-  let result = await DoubtModel.updateOne(
-    { _id: req.params.id },
-    { solution: req.body }
-  );
-  if (result) {
-    resp.send(result);
+  const id = req.params.id;
+  console.log(req.params.id);
+  const newAnswer = { ans: req.body.solution }; // Create a new answer object
+
+  try {
+    const Doubt = await DoubtModel.findById(id);
+    if (!Doubt) {
+      return resp.status(404).json({ message: "Doubt not found" });
+    }
+
+    Doubt.solution.push(newAnswer); // Add the new answer to the solution array
+    const updatedDoubt = await Doubt.save();
+
+    resp.status(200).json(updatedDoubt);
+  } catch (error) {
+    resp.status(500).json({ message: "Server error", error: error.message });
   }
 });
 
