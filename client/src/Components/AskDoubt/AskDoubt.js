@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AskDoubt = () => {
   const [doubtsData, setDoubtsData] = useState([]);
@@ -16,6 +17,7 @@ const AskDoubt = () => {
   const [ansbutton, setAnsbutton] = useState(false);
   const [ans, setAns] = useState("");
   const [ans_id, setAns_id] = useState(null);
+  const [ansTheQuestion, setAnswerTheQuestion] = useState([]);
 
   // const getDoubtsDetails = async () => {
   //   try {
@@ -193,147 +195,217 @@ const AskDoubt = () => {
     }
   };
 
+  const get_My_Answer = async (answer_id) => {
+    let response = await fetch(`http://localhost:5000/answer/${answer_id}`);
+    if (response.status == 200) {
+      const my_ans = await response.json();
+      console.log(my_ans);
+    }
+  };
+
   // enableAnswerInput();
 
   return (
     <section className="askdoubt-section">
-      <div className="left-container">
-        <div id="bg-color">
-          {qnabox && (
-            <div className="qna">
-              <h1>Q&A</h1>
-              <h1>Q&A</h1>
-            </div>
-          )}
-
-          {qnabox && (
-            <div className="qna-box">
-              <input
-                className="input-box"
-                type="text"
-                placeholder="ask your doubt..."
-                onClick={Switch}
-              />
-              <div className="ask-answer-events">
-                <button onClick={Switch} className="btn3">
-                  Ask
-                </button>
-                <h1>|</h1>
-                <button onClick={Switch} className="btn4">
-                  Answer
-                </button>
+      <div className="flex-container">
+        <div className="left-container">
+          <div id="bg-color">
+            {qnabox && (
+              <div className="qna">
+                <h1>Q&A</h1>
+                <h1>Q&A</h1>
               </div>
-            </div>
-          )}
-        </div>
-        <div>
-          {show && (
-            <div id="prompt">
-              {prompttitle1 && (
-                <div className="prompt-div">
-                  <h1>Ask Your Doubt</h1>
-                </div>
-              )}
-              {prompttitle2 && (
-                <div className="prompt-div">
-                  <h1>Answer the Query</h1>
-                </div>
-              )}
-              {prompttip1 && (
-                <div className="prompt-div1">
-                  <ul>
-                    <h1>Tips for getting satisfactory answer quickly</h1>
-                    <li>Keep your query short and to the point</li>
-                    <li>
-                      Make sure your Qestion is not being asked frequently
-                    </li>
-                    <li>Double check grammer and spelling</li>
-                  </ul>
-                </div>
-              )}
+            )}
 
-              {prompttip2 && (
-                <div className="prompt-div1">
-                  <ul>
-                    <h1>Tips for answering the Query</h1>
-                    <li>Keep your answer to the point</li>
-                    <li>
-                      Please make sure you have proficiency on that topic before
-                      answering
-                    </li>
-                    <li>
-                      Don't use unncessary and illegal words while
-                      answering,people may hurt
-                    </li>
-                  </ul>
-                </div>
-              )}
-
-              <div className="prompt-div2">
-                {quesinput && (
-                  <input
-                    type="text"
-                    placeholder="ask your query here..."
-                    onChange={(e) => setQues(e.target.value)}
-                    value={ques}
-                  />
-                )}
-
-                {ansinput && (
-                  <input
-                    type="text"
-                    placeholder="Enter your answer"
-                    onChange={(e) => setAns(e.target.value)}
-                    value={ans}
-                  />
-                )}
-              </div>
-              <div className="prompt-div3">
-                <button className="askdoubt-btn1" onClick={SwitchAgain}>
-                  cancel
-                </button>
-                {quesbutton && (
-                  <button className="askdoubt-btn2" onClick={AddQuestion}>
-                    Add question
+            {qnabox && (
+              <div className="qna-box">
+                <input
+                  className="input-box"
+                  type="text"
+                  placeholder="ask your doubt..."
+                  onClick={Switch}
+                />
+                <div className="ask-answer-events">
+                  <button onClick={Switch} className="btn3">
+                    Ask
                   </button>
-                )}
-                {ansbutton && (
-                  <button className="btn2" onClick={AddAnswer}>
-                    Add answer
+                  <h1>|</h1>
+                  <button onClick={Switch} className="btn4">
+                    Answer
                   </button>
-                )}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-
-        {/* posted questions div  */}
-        {/* <div className="posted-questions-bg"> */}
-
-        {/* </div> */}
-        <div className="posted-questions-bg">
-          <div className="doubts-list">
-            {doubtsData.map((singleData, index) => {
-              return (
-                <div className="doubt-box" key={singleData._id}>
-                  <p>{singleData.doubt}</p>
-                  <div className="doubt-box-nav">
-                    <h6 className="count">{handRaiseCounts[singleData._id]}</h6>
-                    <button onClick={() => increseRaiseCount(singleData._id)}>
-                      Raise hand
-                    </button>
-                    <h1>|</h1>
-                    <button
-                      onClick={() => handleAnswerButtonClick(singleData._id)}
-                    >
-                      Answer
-                    </button>
-                    <h1>|</h1>
-                    <h4>Discussion</h4>
+            )}
+          </div>
+          <div>
+            {show && (
+              <div id="prompt">
+                {prompttitle1 && (
+                  <div className="prompt-div">
+                    <h1>Ask Your Doubt</h1>
                   </div>
+                )}
+                {prompttitle2 && (
+                  <div className="prompt-div">
+                    <h1>Answer the Query</h1>
+                  </div>
+                )}
+                {prompttip1 && (
+                  <div className="prompt-div1">
+                    <ul>
+                      <h1>Tips for getting satisfactory answer quickly</h1>
+                      <li>Keep your query short and to the point</li>
+                      <li>
+                        Make sure your Qestion is not being asked frequently
+                      </li>
+                      <li>Double check grammer and spelling</li>
+                    </ul>
+                  </div>
+                )}
+
+                {prompttip2 && (
+                  <div className="prompt-div1">
+                    <ul>
+                      <h1>Tips for answering the Query</h1>
+                      <li>Keep your answer to the point</li>
+                      <li>
+                        Please make sure you have proficiency on that topic
+                        before answering
+                      </li>
+                      <li>
+                        Don't use unncessary and illegal words while
+                        answering,people may hurt
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
+                <div className="prompt-div2">
+                  {quesinput && (
+                    <input
+                      type="text"
+                      placeholder="ask your query here..."
+                      onChange={(e) => setQues(e.target.value)}
+                      value={ques}
+                    />
+                  )}
+
+                  {ansinput && (
+                    <input
+                      type="text"
+                      placeholder="Enter your answer"
+                      onChange={(e) => setAns(e.target.value)}
+                      value={ans}
+                    />
+                  )}
                 </div>
-              );
-            })}
+                <div className="prompt-div3">
+                  <button className="askdoubt-btn1" onClick={SwitchAgain}>
+                    cancel
+                  </button>
+                  {quesbutton && (
+                    <button className="askdoubt-btn2" onClick={AddQuestion}>
+                      Add question
+                    </button>
+                  )}
+                  {ansbutton && (
+                    <button className="btn2" onClick={AddAnswer}>
+                      Add answer
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* posted questions div  */}
+          {/* <div className="posted-questions-bg"> */}
+
+          {/* </div> */}
+          <div className="posted-questions-bg">
+            <div className="doubts-list">
+              {doubtsData.map((singleData, index) => {
+                return (
+                  <div className="doubt-box" key={singleData._id}>
+                    <p>{singleData.doubt}</p>
+                    <div className="doubt-box-nav">
+                      <h6 className="count">
+                        {handRaiseCounts[singleData._id]}
+                      </h6>
+                      <button
+                        onClick={() => increseRaiseCount(singleData._id)}
+                        className="questions-discussion-btn"
+                      >
+                        Raise hand
+                      </button>
+                      <h1>|</h1>
+                      <button
+                        onClick={() => handleAnswerButtonClick(singleData._id)}
+                        className="questions-discussion-btn"
+                      >
+                        Answer
+                      </button>
+                      <h1>|</h1>
+                      <button
+                        className="questions-discussion-btn"
+                        onClick={() => get_My_Answer(singleData._id)}
+                      >
+                        Discussion
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="right-container">
+          <div className="right-container-contents your-section">
+            <h1>
+              <Link>+ Add Your section</Link>
+            </h1>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>HTML</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>CSS</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>JavaScript</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>Node.js</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>React.js</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>mongoDB</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>Next.js</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>Error Handling</Link>
+            </h2>
+            <h6>Web development</h6>
           </div>
         </div>
       </div>

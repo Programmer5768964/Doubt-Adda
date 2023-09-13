@@ -2,7 +2,16 @@ body {
   background-color: rgb(40 40 41 / 10%);
 }
 .askdoubt-section {
-  box-sizing: border-box;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border: 2px solid green; */
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 #bg-color {
   background-color: transparent;
@@ -18,7 +27,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 200px;
-  width: 50%;
+  width: 70%;
+  margin-left: 170px;
 
   /* color: rgb(255, 246, 125); */
   /* font-size: 90px; */
@@ -27,16 +37,18 @@ body {
   /* color: #c19bf5; */
 }
 .left-container {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
-  width: 100%;
+  /* border: 2px solid red; */
+  width: 68%;
+  box-shadow: 0px 0px 10px;
 }
 
 .qna h1 {
   position: absolute;
   color: #fff;
-  font-size: 100px;
+  font-size: 120px;
   margin-block: 0px;
 }
 
@@ -87,11 +99,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100px;
-  border: 2px solid #8338ec;
-  background-color: #c19bf5;
-  width: 48%;
+  /* border: 2px solid #8338ec; */
+  /* background-color: #c19bf5; */
+  box-shadow: 0px 0px 5px;
+  width: 70%;
   padding: 20px;
-  border-radius: 5px;
+
+  margin-left: 140px;
+  /* border-radius: 5px; */
 }
 
 #prompt {
@@ -162,13 +177,14 @@ body {
   height: 36px;
   width: 100px;
   border: 0;
+  border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
 }
 .askdoubt-btn2 {
   height: 36px;
   width: 150px;
-  /* border: 0; */
+  border: 0;
   font-size: 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -179,11 +195,11 @@ body {
   color: rgb(255, 246, 125);
 }
 .qna-box .input-box {
-  width: 79%;
+  width: 91%;
   height: 38px;
   border-radius: 24px;
   border: none;
-  border: 1.6px solid purple;
+  border: 1px solid purple;
 }
 
 .ask-answer-events {
@@ -220,14 +236,20 @@ body {
 }
 .btn3:hover {
   color: rgb(255, 246, 125);
-  background-color: purple;
-  border-radius: 15px;
+  /* background-color: purple; */
+  color: purple;
+  background-color: transparent;
+  box-shadow: 0px 0px 5px;
+  /* border-radius: 15px; */
   cursor: pointer;
 }
 .btn4:hover {
   color: rgb(255, 246, 125);
-  background-color: purple;
-  border-radius: 15px;
+  /* background-color: purple; */
+  color: purple;
+  background-color: transparent;
+  box-shadow: 0px 0px 5px;
+  /* border-radius: 15px; */
   cursor: pointer;
 }
 
@@ -246,13 +268,14 @@ body {
 }
 .doubts-list {
   /* border: 2px solid red; */
-  border: 2px solid #8338ec;
+  /* border: 2px solid #8338ec; */
   display: flex;
   flex-direction: column;
-  width: 50%;
-  background-color: #c19bf5;
-
-  border-radius: 5px;
+  width: 70%;
+  /* background-color: #c19bf5; */
+  box-shadow: 0px 0px 5px;
+  /* border-radius: 5px; */
+  margin-left: 140px;
 }
 
 .doubt-box {
@@ -261,9 +284,19 @@ body {
   box-shadow: 0px 0px 10px;
   height: 120px;
   margin: 20px;
-  background-color: #00b3fce0;
+  /* background-color: #00b3fce0; */
+  box-shadow: 0px 0px 3px;
   border-radius: 10px;
   padding: 15px;
+}
+.questions-discussion-btn {
+  /* border: 0; */
+  /* height: 20px;
+  width: 100px; */
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 0px 0px 3px;
+  cursor: pointer;
 }
 .doubt-box p {
   font-size: 20px;
@@ -289,14 +322,34 @@ body {
   flex-direction: column;
 }
 
-/* .doubts-list::before {
-  content: " ";
-  top: 0;
+.askdoubt-section .right-container {
+  top: 5px;
+  /* left: 0; */
 
-  left: 0;
+  width: 30%;
+  height: 800px;
+  position: fixed;
+  margin-left: 1061px;
+  box-shadow: 0px 0px 10px;
+}
 
-  background-color: rgb(255, 246, 125);
-  height: 200vh;
-  width: 100%;
-  z-index: -1;
-} */
+.right-container-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid purple; */
+  margin: 20px;
+  height: 50px;
+  box-shadow: 0px 0px 4px;
+}
+.your-section {
+  background-color: #8338ec;
+
+  border: none;
+  box-shadow: 0px 0px 5px;
+  border-radius: 5px;
+}
+.your-section h1 a {
+  color: #ffff67;
+}

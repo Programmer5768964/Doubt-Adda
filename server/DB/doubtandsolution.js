@@ -6,8 +6,8 @@ const DoubtandSolutionSchema = new mongoose.Schema({
       ans: { type: String },
     },
   ],
-  handRaise: { type: Number, default: 0 },
+  handRaise: Number,
 });
 
-const DoubtModel = mongoose.model("bugsandsolution", DoubtandSolutionSchema);
+const DoubtModel = mongoose.model("bugsandsolutions", DoubtandSolutionSchema);
 module.exports = DoubtModel;

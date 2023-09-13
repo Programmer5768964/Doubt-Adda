@@ -70,6 +70,7 @@
   border: none;
   background-color: rgb(150, 64, 226);
   color: white;
+  cursor: pointer;
 }
 .page-name h1 {
   -webkit-text-stroke: 2px #8338ec;

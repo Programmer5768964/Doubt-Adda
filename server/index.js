@@ -61,8 +61,9 @@ app.put("/postanswer/:id", async (req, resp) => {
     if (!Doubt) {
       return resp.status(404).json({ message: "Doubt not found" });
     }
-
+    console.log(Doubt);
     Doubt.solution.push(newAnswer); // Add the new answer to the solution array
+
     const updatedDoubt = await Doubt.save();
 
     resp.status(200).json(updatedDoubt);
