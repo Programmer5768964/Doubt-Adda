@@ -31,7 +31,7 @@ const BuildWebsite = (props) => {
   }
   return (
     <div className="oS">
-      <button className="remove-btn" id="mobile-view-remove"><i className="fa fa-remove"></i></button>
+      <button className="remove-btn" id="mobile-view-remove" onClick={()=>props.setpopUp(false)}><i className="fa fa-remove"></i></button>
       <div className="oS-main">
         <div className="oS-d1">
           <form className="email-form" onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ const BuildWebsite = (props) => {
           </form>
         </div>
         <div className="oS-d2">
-          <button type="submit" className="remove-btn"><i className="fa fa-remove"></i></button>
+          <button type="submit" className="remove-btn" onClick={()=>props.setpopUp(false)}><i className="fa fa-remove"></i></button>
         </div>
       </div>
     </div>
