@@ -1,0 +1,104 @@
+.oS{
+    width:90%;
+    height:90%;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    padding:20px;
+}
+.oS .remove-btn{
+    border:0px;
+    border-radius: 100%;
+    padding:7px;
+    font-size: 25px;
+    background-color: transparent;
+    color:black;
+    float: right;
+}
+.oS .remove-btn:hover{
+    transition-duration: 0.2s;
+    background-color: black;
+    color:white;
+    
+}
+.oS-main{
+    height:100%;
+    width:100%;
+    display:flex;
+}
+.oS-d1{
+    flex:2;
+    padding:20px;
+    overflow-y: scroll;
+}
+.oS-d1::-webkit-scrollbar{
+    display: none;
+}
+.oS-d2{
+    flex:1;
+    background-image: url("./email_sent.png");
+    background-size:400px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#mobile-view-remove{
+    display: none;
+    position: absolute;
+    right:5%;
+}
+.email-form{
+    height:100%;
+    width:100%;
+    font-size: 30px;
+}
+.email-form div{
+    margin-block: 20px;
+    display: flex;
+}
+#email-desc{
+    display:block;
+    height:70%;
+}
+.email-form label{
+    margin-right:10px;
+}
+.email-form input{
+    font-size: 20px;
+    border:0px;
+    outline: none;
+    background-color: #f7f7f7;
+    width:60%;  
+    padding:5px;
+    border-bottom:1px solid black;
+}
+#email-desc textarea{
+    margin-top:10px;
+    resize: none;
+    width:95%;
+    background-color: #f7f7f7;
+    font-size:20px;
+    outline: none;
+    border-radius: 20px;
+    height:80%;
+    padding:5px;
+}
+.email-form button{
+    background-color:rgb(27, 160, 27);
+    color:white;
+    float:right;
+    border:0px;
+    border-radius:20px;
+    padding:10px;
+    cursor: pointer;
+    font-size:20px;
+}
+.email-form button:hover{
+    background-color:rgb(13, 146, 13);
+}
+@media(max-width:850px){
+    .oS-d2{
+        display:none;
+    }
+    #mobile-view-remove{
+        display: block;
+    }
+}

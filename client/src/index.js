@@ -8,7 +8,7 @@ import KnowUs from "./Components/KnowUs/KnowUs";
 import "./Components/KnowUs/KnowUs.css";
 import AskDoubt from "./Components/AskDoubt/AskDoubt";
 import "./Components/AskDoubt/AskDoubt.css";
-import Build from "./Components/BuildWebsite/BuildWebsite";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,7 +18,6 @@ root.render(
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<KnowUs />} />
         <Route path="/askyourdoubt" element={<AskDoubt />} />
-        <Route path="/buildsite" element={<Build/>} />
       </Routes>
     </Router>
   </React.StrictMode>
