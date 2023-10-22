@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const nodemailer = require('nodemailer');
 const cors = require("cors");
 require("./DB/config");
 const dotenv = require("dotenv");
@@ -88,5 +89,37 @@ app.get("/answer/:id", async (req, resp) => {
 //   );
 //   resp.send(result);
 // });
+app.post("/sendEmail", (req, res) => {
+  var Transport = nodemailer.createTransport({
+    host: "smtp-mail.outlook.com", // hostname
+    secureConnection: false, // TLS requires secureConnection to be false
+    port: 587, // port for secure SMTP
+    tls: {
+      ciphers: 'SSLv3'
+    },
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+  let Recever_Email = ["0211cse092@niet.co.in","0211cse082@niet.co.in"]
+  for(let i=0;i<Recever_Email.length;i++){
+    var mailOptions = {
+      from: process.env.EMAIL, // sender address (who sends)
+      to: Recever_Email[i], // list of receivers (who receives)
+      subject: "New WebSite Building Request from"+req.body.Email, // Subject line
+      html: 
+      `
+      <h3>Email: ${req.body.Email}</h3>
+      <h3>Email: ${req.body.ContactNo}</h3>
+      <div>
+      ${req.body.Desc}
+      </div>
+      ` // html body
+    };
+    Transport.sendMail(mailOptions);
+  }
+  res.send({ status: "ok" });
+});
 
 app.listen(process.env.PORT);
