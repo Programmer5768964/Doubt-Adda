@@ -71,6 +71,13 @@ app.put("/postanswer/:id", async (req, resp) => {
     resp.status(500).json({ message: "Server error", error: error.message });
   }
 });
+app.get("/answer/:id", async (req, resp) => {
+  const answer_id = req.params.id;
+  console.log(answer_id);
+  const my_Ans = await DoubtModel.findById(answer_id);
+  console.log(my_Ans.solution);
+  resp.send(my_Ans.solution);
+});
 
 // app.put("/product/:id", verifyToken, async (req, resp) => {
 //   // resp.send("Put is working")

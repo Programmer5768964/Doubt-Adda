@@ -18,6 +18,7 @@ const AskDoubt = () => {
   const [ans, setAns] = useState("");
   const [ans_id, setAns_id] = useState(null);
   const [ansTheQuestion, setAnswerTheQuestion] = useState([]);
+  const [answerDiv, setAnswerDiv] = useState(false);
 
   // const getDoubtsDetails = async () => {
   //   try {
@@ -196,9 +197,10 @@ const AskDoubt = () => {
   };
 
   const get_My_Answer = async (answer_id) => {
-    let response = await fetch(`http://localhost:5000/answer/${answer_id}`);
-    if (response.status == 200) {
-      const my_ans = await response.json();
+    let result = await fetch(`http://localhost:5000/answer/${answer_id}`);
+    if (result.status == 200) {
+      const my_ans = await result.json();
+      setAnswerTheQuestion(my_ans);
       console.log(my_ans);
     }
   };
@@ -328,17 +330,34 @@ const AskDoubt = () => {
                 return (
                   <div className="doubt-box" key={singleData._id}>
                     <p>{singleData.doubt}</p>
+
+                    {ansTheQuestion === singleData._id ? (
+                      <div>
+                        {console.log("hello")}
+                        {ansTheQuestion.map((singleVal, index) => {
+                          if (singleVal.ans) {
+                            return (
+                              <p key={index}>
+                                Ans {index}-->{singleVal.ans}
+                              </p>
+                            );
+                          }
+                        })}
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <div className="doubt-box-nav">
-                      <h6 className="count">
+                      {/* <h6 className="count">
                         {handRaiseCounts[singleData._id]}
-                      </h6>
-                      <button
+                      </h6> */}
+                      {/* <button
                         onClick={() => increseRaiseCount(singleData._id)}
                         className="questions-discussion-btn"
                       >
                         Raise hand
-                      </button>
-                      <h1>|</h1>
+                      </button> */}
+                      {/* <h1>|</h1> */}
                       <button
                         onClick={() => handleAnswerButtonClick(singleData._id)}
                         className="questions-discussion-btn"
@@ -357,6 +376,7 @@ const AskDoubt = () => {
                 );
               })}
             </div>
+            <div className="answer-list"></div>
           </div>
         </div>
 
@@ -394,6 +414,11 @@ const AskDoubt = () => {
           <div className="right-container-contents">
             <h2>
               <Link>mongoDB</Link>
+            </h2>
+          </div>
+          <div className="right-container-contents">
+            <h2>
+              <Link>fireBase</Link>
             </h2>
           </div>
           <div className="right-container-contents">
