@@ -1,0 +1,39 @@
+.main-footer{
+
+    display: flex;
+    /* height: px; */
+    /* background-color: black; */
+    border: 1px solid black;
+    /* margin-block-start: 100px; */
+    /* width: 100%; */
+    justify-content: space-between;
+    margin-inline:100px ;
+    padding:25px;
+
+}
+
+.main-footer-logo{
+    border: 1px solid purple;
+
+}
+
+.main-footer-content{
+    border: 1px solid purple;
+    display:flex ;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 50%;
+}
+.main-footer-content1{
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+
+}
+
+.main-footer-content2{
+    border: 1px solid black;
+    display: flex;
+flex-direction: column;
+
+}

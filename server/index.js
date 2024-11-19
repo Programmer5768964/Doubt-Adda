@@ -73,11 +73,12 @@ app.put("/postanswer/:id", async (req, resp) => {
   }
 });
 app.get("/answer/:id", async (req, resp) => {
-  const answer_id = req.params.id;
-  console.log(answer_id);
-  const my_Ans = await DoubtModel.findById(answer_id);
+  const id = req.params.id;
+  console.log(id);
+  const my_Ans = await DoubtModel.findById(id);
   console.log(my_Ans.solution);
-  resp.send(my_Ans.solution);
+  const respVal = {id:id,answers:my_Ans.solution}
+  resp.send(respVal);
 });
 
 // app.put("/product/:id", verifyToken, async (req, resp) => {

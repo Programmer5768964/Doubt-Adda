@@ -3,7 +3,7 @@ const DoubtandSolutionSchema = new mongoose.Schema({
   doubt: { type: String, required: true },
   solution: [
     {
-      ans: { type: String },
+      ans: { type: String ,default:"NA"},
     },
   ],
   handRaise: Number,

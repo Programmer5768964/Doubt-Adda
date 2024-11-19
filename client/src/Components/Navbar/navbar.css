@@ -1,0 +1,47 @@
+
+nav h1{
+    font-size: 30px;
+    margin:10px;
+    margin-inline-start: 10px;
+    margin-left:20px;
+    display: inline-block;
+}
+nav{
+    position:sticky;
+    /* z-index: 1; */
+
+    display:inline-block;
+    width:100%;
+    background-color: white;
+}
+.btn{
+    margin:5px;
+    margin-right:20px;
+    float:right;
+    align-content: center;
+    display: inline-block;
+    padding:10px;
+    font-size: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color:rgb(150, 64, 226);
+    color:black;
+    border: none;
+}
+
+.btn:hover{
+    transition-duration: 0.5s;
+    background-color:rgb(89, 31, 137);
+}
+nav div{
+    float:right;
+    width:100px; 
+    transition-duration: 0.3s;
+    height:45px;
+    margin-top:5px;
+    border:0px;
+    border-radius:20px;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:90px;
+}

@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.career-page-desc{
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin-block-start: px; */
+
+    justify-content: space-around;
+    height: 500px;
+    background-color: #174164;
+}
+
+.slogan{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 1px solid white; */
+    margin-block: 100px;
+    /* margin-block-start: 200px; */
+    width: 600px;
+}
+.slogan h2{
+    margin: 10px;
+    font-size: 30px;
+    font-family: 'Roboto';
+}
+.slogan p{
+    margin: 10px;
+  
+    /* font-size: 30px; */
+}
+.animated-pic img{
+    height: 500px;
+
+}
+
+.signup-btn{
+    width: 100px;
+    /* margin-right: 20px; */
+    height: 35px;
+    border-radius: 7px;
+    border: none;
+    /* border: 2px solid purple; */
+    font-size: 19px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    color: #174164;
+    background-color: white;
+  
+    box-shadow: 0px 0px 8px #555519;
+    margin: 10px;
+}
+.signup-btn:hover{
+    cursor: pointer ;
+}
+
+.application-desc{
+    background-color: #DEECF7;
+    height: 700px;
+    margin-block-start: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    
+    
+}
+.video-desc{
+    /* border: 1px solid purple; */
+    width: 650px;
+    margin-block: 70px;
+    border-radius: 15px;
+    background-color: #0f6fbc;
+}
+.text-desc{
+    border: 1px solid purple;
+    width: 650px;
+    margin-block:70px;
+    
+}
+
+.application-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 500px; */
+    background-color: #09485D;   /*#003559*/
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    /* height: 400px; */
+    width: 50%; 
+    padding: 30px;
+    justify-content: space-between;
+    border-radius:15px ;
+    box-shadow: 0px 0px 1px 1px;
+    margin-block-end: 30px;
+}
+.form-group-input{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* border: 1px solid white; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group-input div input{
+    width: 370px;
+    height: 35px;
+    border:1px solid black  ;
+    border-radius: 5px;
+    padding: 2px;
+    
+}
+
+
+.form-group-input div select{
+    width: 373px;
+    height: 40px;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+
+/* .form-group-input div input::placeholder{
+    height: px;
+} */
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800 */
+
+.host-grotesk-h2 {
+  font-family: "Host Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+   

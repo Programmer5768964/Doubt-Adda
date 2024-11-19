@@ -8,17 +8,23 @@ import KnowUs from "./Components/KnowUs/KnowUs";
 import "./Components/KnowUs/KnowUs.css";
 import AskDoubt from "./Components/AskDoubt/AskDoubt";
 import "./Components/AskDoubt/AskDoubt.css";
+import Career from"./Components/Career/career"
+import Navbar from "./Components/Navbar/navbar"
+import Footer from "./Components/Footer/footer"
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<KnowUs />} />
         <Route path="/askyourdoubt" element={<AskDoubt />} />
+        <Route path="/findcareer" element={<Career/>}/>
       </Routes>
+      {/* <Footer /> */}
     </Router>
   </React.StrictMode>
 );
